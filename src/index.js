@@ -3,7 +3,7 @@ const convertShortHex = hex =>
   `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
 
 module.exports = hexadecimal => {
-  if (Object.prototype.toString.call(hexadecimal) === '[Object String]') {
+  if (typeof hexadecimal !== 'string') {
     throw new TypeError(`Expected ${hexadecimal} to be a string.`);
   }
 

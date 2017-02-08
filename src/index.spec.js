@@ -2,6 +2,11 @@ const expect = require('chai').expect;
 const hexToRgb = require('./index');
 
 describe('hex-to-rgb', function () {
+  it('should throw TypeErorr if hexadecimal is not string.', function () {
+    const fn = () => hexToRgb(255);
+    expect(fn).to.throw(TypeError);
+  });
+
   it('should remove leading #', function () {
     const rgb = hexToRgb('#ffa100');
 
