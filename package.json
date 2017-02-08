@@ -1,14 +1,16 @@
 {
   "name": "@defo550/hex-to-rgb",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Convert hex color to rgb value.",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha src/index.spec.js"
+    "commit": "git-cz",
+    "test": "mocha src/index.spec.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defo550/hex-to-rgb.git"
+    "url": "https://github.com/defo550/hex-to-rgb.git"
   },
   "keywords": [
     "hex",
@@ -25,6 +27,12 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "3.2.0"
+    "commitizen": "2.9.5",
+    "cz-conventional-changelog": "1.2.0",
+    "mocha": "3.2.0",
+    "semantic-release": "^6.3.2"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
