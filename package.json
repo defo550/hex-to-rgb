@@ -2,13 +2,15 @@
   "name": "@defo550/hex-to-rgb",
   "version": "0.0.0-development",
   "description": "Convert hex color to rgb value.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src -d dist --ignore *.spec.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "commit": "git-cz",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.spec.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "prebuild": "rimraf dist",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.spec.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,10 @@
   "keywords": [
     "hex",
     "rgb"
+  ],
+  "files": [
+    "dist",
+    "README.md"
   ],
   "author": "Christopher DeFelice <defo550@gmail.com>",
   "license": "MIT",
@@ -28,6 +34,8 @@
     "node": ">= 6.0.0"
   },
   "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-preset-es2015": "6.22.0",
     "chai": "3.5.0",
     "codecov.io": "0.1.6",
     "commitizen": "2.9.5",
@@ -35,6 +43,7 @@
     "ghooks": "2.0.0",
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
+    "rimraf": "2.5.4",
     "semantic-release": "^6.3.2"
   },
   "czConfig": {
