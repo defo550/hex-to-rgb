@@ -7,7 +7,7 @@
 
 ## Installation
 
-Package is distributed via npm:
+Package is distributed via [npm](https://www.npmjs.com/):
 
 ```javascript
 npm i @defo550/hex-to-rgb
